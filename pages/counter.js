@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useSearchParams } from 'next/navigation'
 import { useRouter } from "next/router"
+import styles from '../styles/Counter.module.css'
 
 export default function Counter() {
 
@@ -15,12 +16,15 @@ export default function Counter() {
 
     return (
         <>
+        <head className={styles.welcome}>
             <div>COUNTER PAGE</div>
             <div>Welcome, {isUser}.</div>
-
-            <div>{number}</div>
-            <button onClick={() => setNumber(number + 1)}>Increment</button>
-            <button onClick={() => setNumber(number - 1)}>Decrement</button>
+        </head>
+        <main className={styles.main}>
+            <div class="num">{number}</div>
+            <button className={styles.button} onClick={() => setNumber(number + 1)} id="incdec">Increment</button>
+            <button className={styles.button} onClick={() => setNumber(number - 1)}>Decrement</button>     
+        </main>
         </>
     )
 }

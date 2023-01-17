@@ -39,7 +39,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <label>First name:</label>
+        <label class="first-name">First name:</label>
         <input
           type="text"
           id="first"
@@ -49,7 +49,7 @@ export default function Home() {
           onChange={(e => setFormData({...formData, firstName: e.target.value}))}
         />
 
-        <label>Username:</label>
+        <label class="username">Username:</label>
         <input
           type="text"
           id="username"
@@ -60,7 +60,7 @@ export default function Home() {
           onChange={(e => setFormData({...formData, username: e.target.value}))}
         />
 
-        <button type="submit" onClick={() => CheckLogin()}>Submit</button>
+        <button type="submit" onClick={() => CheckLogin()} class="submit">Submit</button>
       </main>
     </>
   )
